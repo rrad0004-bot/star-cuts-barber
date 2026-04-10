@@ -86,7 +86,7 @@ export default function Home() {
 
             {/* MAP CARD (OPTION 2 FIXED) */}
             <a
-              href="https://www.google.com/maps/place/Star+Cuts+Barber+Shop"
+              href="https://www.google.com/maps/search/?api=1&query=Star+Cuts+Barber+Shop+Shop+3A%2F2-14+Calder+Park+Dr+Taylors+Hill+VIC+3037"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}
@@ -95,8 +95,7 @@ export default function Home() {
                 style={{
                   height: '400px',
                   borderRadius: '12px',
-                  backgroundImage:
-                    "url('https://maps.googleapis.com/maps/api/staticmap?center=Taylors+Hill+VIC+3037&zoom=14&size=800x400&maptype=roadmap')",
+                  background: 'linear-gradient(135deg, #dfe9f3, #ffffff)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   display: 'flex',
