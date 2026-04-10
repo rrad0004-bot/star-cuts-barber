@@ -20,13 +20,13 @@ const Hero = () => {
         </div>
 
         <div className={styles.actions}>
-          <Link href="/contact" className="btn">
+          <Link href="/contact" className={styles.primaryBtn}>
             Book Appointment
           </Link>
 
-          <a href="tel:+61312345678" className={styles.secondaryBtn}>
+          <Link href="/contact" className={styles.secondaryBtn}>
             Call Now
-          </a>
+          </Link>
         </div>
       </div>
     </section>
