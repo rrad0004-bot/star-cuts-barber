@@ -1,0 +1,45 @@
+.navbar {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--foreground-color);
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navLinks a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--foreground-color);
+  opacity: 0.7;
+}
+
+.navLinks a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Simplified for now, can add mobile menu later */
+  }
+}
