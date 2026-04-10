@@ -18,9 +18,9 @@
 }
 
 .cardImage {
+  position: relative;
   height: 250px;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 }
 
 .cardContent {

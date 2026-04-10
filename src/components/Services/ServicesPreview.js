@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './Services.module.css';
 
 const services = [
@@ -29,10 +30,14 @@ const ServicesPreview = () => {
         <div className={styles.grid}>
           {services.map((service, index) => (
             <div key={index} className={styles.card}>
-              <div
-                className={styles.cardImage}
-                style={{ backgroundImage: `url(${service.image})` }}
-              ></div>
+              <div className={styles.cardImage}>
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <div className={styles.cardContent}>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
