@@ -28,7 +28,7 @@ export default function Home() {
             Walk into Star Cuts Barber Shop for professional haircuts, beard grooming, and kids cuts in Taylors Hill.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="ctaButtons">
             <Link
               href="/contact"
               className="btn"
@@ -60,12 +60,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '3rem',
-              alignItems: 'center',
-            }}
+            className="locationGrid"
           >
             {/* TEXT */}
             <div>

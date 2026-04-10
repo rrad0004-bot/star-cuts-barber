@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -39,7 +40,86 @@
 }
 
 @media (max-width: 768px) {
-  .navLinks {
-    display: none; /* Simplified for now, can add mobile menu later */
+  .hamburger {
+    display: block;
   }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .active {
+    display: flex;
+  }
+}
+
+/* hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* mobile menu base */
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+
+    flex-direction: column;
+    background: white;
+    padding: 1.5rem;
+
+    display: none;
+    /* hidden by default */
+    border-top: 1px solid #eee;
+  }
+
+  .navLinks li {
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+
+  /* when menu is open */
+  .active {
+    display: flex;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground-color);
+  z-index: 1000;
+}
+
+.hamburger {
+  border: 2px solid red;
 }
