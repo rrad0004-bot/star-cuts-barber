@@ -69,3 +69,15 @@
     align-items: stretch;
   }
 }
+
+.subtitle {
+  margin-bottom: 1.5rem;
+  /* slightly reduced spacing control */
+}
+
+.trust {
+  margin-top: 1.8rem;
+  /* pushes it away from subtitle */
+  margin-bottom: 2.5rem;
+  /* creates breathing room before buttons */
+}
