@@ -4,17 +4,17 @@ const services = [
   {
     title: 'Precision Haircuts',
     description: 'Expertly tailored haircuts for men and kids, from classic styles to modern fades.',
-    image: 'https://images.unsplash.com/photo-1599351431202-1e0f013d899a?auto=format&fit=crop&q=80&w=800',
+    image: '/images/haircut.jpg', // Adult Fade
   },
   {
     title: 'Beard Grooming',
     description: 'Professional beard trimming, shaping, and hot towel treatments for the sharpest look.',
-    image: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&q=80&w=800',
+    image: '/images/beard.jpg',
   },
   {
     title: 'Kids Haircuts',
     description: 'A welcoming and patient experience for the little ones, ensuring they leave with a smile.',
-    image: 'https://images.unsplash.com/photo-1618331817316-2da98d896944?auto=format&fit=crop&q=80&w=800',
+    image: '/images/kid.jpg',
   }
 ];
 
@@ -29,8 +29,8 @@ const ServicesPreview = () => {
         <div className={styles.grid}>
           {services.map((service, index) => (
             <div key={index} className={styles.card}>
-              <div 
-                className={styles.cardImage} 
+              <div
+                className={styles.cardImage}
                 style={{ backgroundImage: `url(${service.image})` }}
               ></div>
               <div className={styles.cardContent}>
