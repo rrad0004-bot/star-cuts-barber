@@ -59,9 +59,8 @@ export default function Home() {
       {/* LOCATION SECTION */}
       <section className="section">
         <div className="container">
-          <div
-            className="locationGrid"
-          >
+          <div className="locationGrid">
+
             {/* TEXT */}
             <div>
               <h2 className="title">Visit Star Cuts Barber Shop</h2>
@@ -85,21 +84,34 @@ export default function Home() {
               </div>
             </div>
 
-            {/* MAP PLACEHOLDER */}
-            <div
-              style={{
-                backgroundColor: '#eee',
-                height: '400px',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
+            {/* MAP CARD (OPTION 2 FIXED) */}
+            <a
+              href="https://www.google.com/maps/place/Star+Cuts+Barber+Shop"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
             >
-              <p style={{ color: '#888' }}>
-                [ Google Map Embed Coming Here ]
-              </p>
-            </div>
+              <div
+                style={{
+                  height: '400px',
+                  borderRadius: '12px',
+                  backgroundImage:
+                    "url('https://maps.googleapis.com/maps/api/staticmap?center=Taylors+Hill+VIC+3037&zoom=14&size=800x400&maptype=roadmap')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontSize: '1.2rem',
+                  backgroundColor: '#ddd',
+                }}
+              >
+                📍 Open in Google Maps
+              </div>
+            </a>
+
           </div>
         </div>
       </section>
