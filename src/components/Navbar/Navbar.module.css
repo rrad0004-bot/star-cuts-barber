@@ -1,125 +1,58 @@
 .navbar {
-  background-color: var(--background-color);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: relative;
   z-index: 1000;
-  padding: 1rem 0;
 }
 
 .navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  padding: 1rem 0;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--foreground-color);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
+/* desktop nav */
 .navLinks {
   display: flex;
-  list-style: none;
   gap: 2rem;
-}
-
-.navLinks a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--foreground-color);
-  opacity: 0.7;
-}
-
-.navLinks a:hover {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .navLinks {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: white;
-    padding: 1rem;
-    z-index: 999;
-  }
-
-  .active {
-    display: flex;
-  }
+  list-style: none;
 }
 
 /* hamburger hidden on desktop */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* mobile menu base */
-.navLinks {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-/* MOBILE MODE */
-@media (max-width: 768px) {
-
-  .hamburger {
-    display: block;
-  }
-
-  .navLinks {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    left: 0;
-
-    flex-direction: column;
-    background: white;
-    padding: 1.5rem;
-
-    display: none;
-    /* hidden by default */
-    border-top: 1px solid #eee;
-  }
-
-  .navLinks li {
-    padding: 0.75rem 0;
-    text-align: center;
-  }
-
-  /* when menu is open */
-  .active {
-    display: flex;
-  }
-}
-
 .hamburger {
   display: none;
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--foreground-color);
-  z-index: 1000;
 }
 
-.hamburger {
-  border: 2px solid red;
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .active {
+    display: flex;
+  }
 }
