@@ -1,8 +1,10 @@
 .navbar {
-  background: white;
-  border-bottom: 1px solid #eee;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 1000;
+  color: white;
 }
 
 .navContainer {
@@ -15,6 +17,7 @@
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
+  color: white;
 }
 
 /* desktop nav */
@@ -24,6 +27,15 @@
   list-style: none;
 }
 
+.navLinks a {
+  color: white;
+  transition: 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: #cccccc;
+}
+
 /* hamburger hidden on desktop */
 .hamburger {
   display: none;
@@ -31,6 +43,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: white;
 }
 
 /* MOBILE */
@@ -38,6 +51,7 @@
 
   .hamburger {
     display: block;
+    color: white;
   }
 
   .navLinks {
@@ -47,12 +61,19 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: white;
+
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+
     padding: 1rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .active {
     display: flex;
+  }
+
+  .navLinks li {
+    padding: 0.75rem 0;
   }
 }
