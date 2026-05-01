@@ -1,72 +1,79 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: 'Haircut',
-    message: ''
-  });
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', service: 'Haircut', message: '' });
-  };
+    setLoading(true);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    emailjs.sendForm(
+      'service_n1tpopl',
+      'template_rmiteba',
+      formRef.current,
+      'eyuLIDzmulYYSOUP7'
+    )
+      .then(() => {
+        setLoading(false);
+        alert('Thank you! We will get back to you soon.');
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert('Something went wrong. Please try again.');
+        console.error(error);
+      });
   };
 
   return (
-    <form className={styles.form} onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
+    <form
+      ref={formRef}
+      className={styles.form}
+      onSubmit={sendEmail}
+    >
+
       <div className={styles.field}>
         <label htmlFor="name">Full Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          required 
-          value={formData.name}
-          onChange={handleChange}
+        <input
+          type="text"
+          id="name"
+          name="from_name"   // 🔥 IMPORTANT CHANGE
+          required
           placeholder="John Doe"
         />
       </div>
+
       <div className={styles.field}>
         <label htmlFor="email">Email Address</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required 
-          value={formData.email}
-          onChange={handleChange}
+        <input
+          type="email"
+          id="email"
+          name="from_email"  // 🔥 IMPORTANT CHANGE
+          required
           placeholder="john@example.com"
         />
       </div>
+
       <div className={styles.field}>
         <label htmlFor="phone">Phone Number</label>
-        <input 
-          type="tel" 
-          id="phone" 
-          name="phone" 
-          value={formData.phone}
-          onChange={handleChange}
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
           placeholder="(03) 1234 5678"
         />
       </div>
+
       <div className={styles.field}>
         <label htmlFor="service">Service Interested In</label>
-        <select 
-          id="service" 
-          name="service" 
-          value={formData.service}
-          onChange={handleChange}
+        <select
+          id="service"
+          name="service"
         >
           <option value="Haircut">Men's Haircut</option>
           <option value="Kids Haircut">Kids Haircut</option>
@@ -75,18 +82,21 @@ const ContactForm = () => {
           <option value="Other">Other</option>
         </select>
       </div>
+
       <div className={styles.field}>
         <label htmlFor="message">Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="5" 
-          value={formData.message}
-          onChange={handleChange}
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
           placeholder="Any special requests or questions?"
         ></textarea>
       </div>
-      <button type="submit" className="btn" style={{ width: '100%' }}>Send Message</button>
+
+      <button type="submit" className="btn" style={{ width: '100%' }}>
+        {loading ? 'Sending...' : 'Send Message'}
+      </button>
+
     </form>
   );
 };
