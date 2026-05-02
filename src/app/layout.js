@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-
+import FloatingCallButton from "@/components/FloatingCallButton/FloatingCallButton";
 export const metadata = {
   title: "Star Cuts Barber Shop | Taylors Hill, VIC",
   description: "Experience professional haircuts and grooming at Star Cuts Barber Shop. Located in Taylors Hill, VIC. Quality cuts for men and kids.",
@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingCallButton />
       </body>
     </html>
   );

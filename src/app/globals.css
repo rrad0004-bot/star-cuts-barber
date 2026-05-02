@@ -168,3 +168,39 @@ section {
     text-align: center;
   }
 }
+
+.floatingCall {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: black;
+  color: white;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+.floatingCall:hover {
+  transform: scale(1.1);
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .floatingCall {
+    display: none;
+  }
+}

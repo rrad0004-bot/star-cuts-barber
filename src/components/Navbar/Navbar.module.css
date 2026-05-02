@@ -117,3 +117,8 @@
     margin-top: 0.5rem;
   }
 }
+
+.scrolled {
+  padding: 0.3rem 0;
+  background: rgba(10, 10, 10, 0.98);
+}
