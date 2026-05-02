@@ -2,7 +2,8 @@
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   color: white;
 }
@@ -48,6 +49,10 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .navCta {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
 
   .hamburger {
     display: block;
@@ -76,4 +81,17 @@
   .navLinks li {
     padding: 0.75rem 0;
   }
+}
+
+.navCta {
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navCta:hover {
+  background: white;
+  color: black;
 }
