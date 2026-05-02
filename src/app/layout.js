@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main className="pageFade">{children}</main>
         <Footer />
         <FloatingCallButton />
       </body>
