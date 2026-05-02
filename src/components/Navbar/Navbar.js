@@ -33,8 +33,16 @@ const Navbar = () => {
             <li><Link href="/services" onClick={() => setOpen(false)}>Services</Link></li>
             <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
             <li><Link href="/faq" onClick={() => setOpen(false)}>FAQ</Link></li>
-            {/* CTA BUTTON */}
-            <li>
+
+            {/* DESKTOP CTA */}
+            <li className={styles.desktopOnly}>
+              <Link href="/contact" className={styles.navCta}>
+                Book Now
+              </Link>
+            </li>
+
+            {/* MOBILE CTA */}
+            <li className={styles.mobileOnly}>
               <a href="tel:+61312345678" className={styles.navCta}>
                 Call Now
               </a>
